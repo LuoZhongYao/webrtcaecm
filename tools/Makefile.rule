@@ -1,0 +1,40 @@
+#
+#
+#	项目编译规则文件，其他目录引用该文件的规则来编译。这种用法来自BlueLab。
+#	一个把消息机制用得非常烂的蓝牙开发平台。
+.PHONY: clean
+i = $r/include $r/lib
+l = $r/lib
+
+vpath %.h $i
+vpath %.a $l
+
+AR = ar
+CC = gcc
+CXX = g++
+LD = ld
+RM =rm -f
+MAKE = make
+
+CFLAGS += $(addprefix -I,$i) -std=gnu99 -g 
+CXXFLAGS += $(addprefix -I,$i) -g
+
+#-Wall -Werror
+LDFLAGS += $(addprefix -L,$l) -g
+
+ifndef r
+$(error 未定义根目录，如果你不想定义，看看/目录下，相信你会改变这个主意的.你能看到目录的原因是rm 没有-rf!)
+endif
+
+
+%.o:%.c
+	@$(CC) -c $< $(CFLAGS) -MD -MP  -MT"$(@:%.o=%.d)" -MT"$@" -o $@
+
+%.o:%.cc
+	@$(CXX) -c $< $(CXXFLAGS) -MD -MP  -MT"$(@:%.o=%.d)" -MT"$@" -o $@
+
+%.a:%.o
+	@$(AR) -r $@ $^
+
+clean:
+	-$(RM) *.out *.o *.d
