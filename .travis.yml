@@ -1,0 +1,12 @@
+language: c
+os: linux
+addons:
+    packages:
+        - make
+
+compiler: gcc
+script:
+    - mkdir lib
+    - make 
+    - make aec
+    - ./test/aec

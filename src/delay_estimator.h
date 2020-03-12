@@ -14,7 +14,7 @@
 #ifndef WEBRTC_MODULES_AUDIO_PROCESSING_UTILITY_DELAY_ESTIMATOR_H_
 #define WEBRTC_MODULES_AUDIO_PROCESSING_UTILITY_DELAY_ESTIMATOR_H_
 
-#include "webrtc/typedefs.h"
+#include "typedefs.h"
 
 typedef struct {
   // Pointer to bit counts.

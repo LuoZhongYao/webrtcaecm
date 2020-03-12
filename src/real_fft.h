@@ -11,7 +11,7 @@
 #ifndef WEBRTC_COMMON_AUDIO_SIGNAL_PROCESSING_INCLUDE_REAL_FFT_H_
 #define WEBRTC_COMMON_AUDIO_SIGNAL_PROCESSING_INCLUDE_REAL_FFT_H_
 
-#include "webrtc/typedefs.h"
+#include "typedefs.h"
 
 // For ComplexFFT(), the maximum fft order is 10;
 // for OpenMax FFT in ARM, it is 12;

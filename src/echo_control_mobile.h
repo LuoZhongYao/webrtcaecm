@@ -13,7 +13,7 @@
 
 #include <stdlib.h>
 
-#include "webrtc/typedefs.h"
+#include "typedefs.h"
 
 enum {
     AecmFalse = 0,
