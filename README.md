@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/LuoZhongYao/webrtcaecm.svg?branch=master)](https://travis-ci.org/LuoZhongYao/webrtcaecm)
+
+
 webrtcaecm
 ==========
 
